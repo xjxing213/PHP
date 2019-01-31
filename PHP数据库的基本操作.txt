@@ -1,0 +1,95 @@
+﻿<?php
+
+//连接数据库
+/*$con=mysql_connect("localhost","root","19960621");// or die('Error:'.mysql_error());
+if(!$con){
+die("连接失败!".mysql_errno());
+}else{
+echo "连接数据库成功";
+mysql_query("CREATE DATABASE dbmysql",$con);
+mysql_select_db("dbmysql",$con);
+$sql="CREATE TABLE person (personID int NOT NULL AUTO_INCREMENT,FirstName varchar(15),LastName varchar(15),Age int,PRIMARY KEY(personID))";
+$str=mysql_query($sql,$con);
+echo "<br>".$str."<br>";
+mysql_close($con);
+}
+//往表里插数据
+$con=mysql_connect("localhost","root","19960621");
+mysql_select_db("dbmysql",$con);
+mysql_query("insert into person(`FirstName`, `LastName`, `Age`)values('tom','tony','20')");
+mysql_query("insert into person(`FirstName`, `LastName`, `Age`)values('lh','h','16')");
+mysql_query("insert into person(`FirstName`, `LastName`, `Age`)values('jy','j','24')");
+//查询数据
+$con=mysql_connect("localhost","root","19960621");
+mysql_select_db("dbmysql",$con);
+$result=mysql_query("select * from person");
+while($row=mysql_fetch_array($result)){
+echo $row["FirstName"]."".$row["LastName"];
+echo "<br>";
+}
+//更新数据
+$con=mysql_connect("localhost","root","19960621");
+mysql_select_db("dbmysql",$con);
+mysql_query("update person set FirstName='dx',LastName='x',`Age`=18 where `personID`=3");
+//删除数据
+$con=mysql_connect("localhost","root","19960621");
+mysql_select_db("dbmysql",$con);
+mysql_query("delete from person where `personID`=2");
+mysql_close($con);
+
+//mysql_list_dbs()函数==>列出 MySQL 服务器中所有的数据库
+$con=mysql_connect("localhost","root","19960621");
+$dl=mysql_list_dbs($con);
+while($db=mysql_fetch_object($dl)){
+echo $db->Database."<br>";
+}
+mysql_close($con);
+//mysql_num_fields()函数==>返回结果集中字段的数
+$con = mysql_connect("localhost", "root", "19960621");
+if (!$con){
+die('Could not connect: ' . mysql_error());
+}
+$db_selected = mysql_select_db("dbmysql",$con);
+$sql = "SELECT * FROM person";
+$result = mysql_query($sql,$con);
+echo mysql_num_fields($result);//输出列的个数
+mysql_close($con);
+//mysql_num_rows()函数==>返回结果集中行的数目
+$con = mysql_connect("localhost", "root", "19960621");
+if (!$con){
+die('Could not connect: ' . mysql_error());
+}
+$db_selected = mysql_select_db("dbmysql",$con);
+$sql = "SELECT * FROM person";
+$result = mysql_query($sql,$con);
+echo mysql_num_rows($result);//查询出的总行数
+mysql_close($con);
+//mysql_affected_rows()函数==>返回前一次MySQL操作所影响的记录行数
+$con = mysql_connect("localhost", "root", "19960621");
+if (!$con){
+die('Could not connect: ' . mysql_error());
+}
+mysql_select_db("dbmysql");
+mysql_query("DELETE FROM person WHERE personid =3");
+$rc = mysql_affected_rows();
+echo "Records deleted: " . $rc;
+mysql_close($con);
+//mysql_real_escape_string()函数==>转义SQL语句中使用的字符串中的特殊字符
+//获得用户名和密码的代码
+$user="a\r\nbc";
+$pwd="a\r\nbc";
+//转义用户名，以便在 SQL 中使用
+$user = mysql_real_escape_string($user);
+$pwd = ($pwd);
+$sql = "SELECT * FROM users WHERE user='" . $user . "' AND password='" . $pwd . "'";
+echo $sql; //用户名和密码对比
+//mysql_result() 函数返回结果集中一个字段的值
+$con = mysql_connect("localhost", "root", "19960621");
+if (!$con){
+die('Could not connect: ' . mysql_error());
+}
+$db_selected = mysql_select_db("dbmysql", $con);
+$sql = "SELECT * from Person";
+$result = mysql_query($sql,$con);
+echo mysql_result($result,1,2);
+mysql_close($con);*/
